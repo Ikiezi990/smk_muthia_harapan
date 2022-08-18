@@ -40,12 +40,12 @@
                     <?php foreach ($data as $row) : ?>
                     <tr>
                         <td>{{ $i++ }}</td>
-                        <td>{{ $row->id }}</td>
+                        <td>{{ $row->mapel->wwwwwwwwwwwwwwwid }}</td>
                         <td>{{ $row->mapel->nama_mapel }}</td>
                         <td>{{ $row->total_guru }}</td>
                         <td>
                             <div class="btn-group">
-                                <a href="{{ route('gurus.show', $row->id) }}" class="btn btn-info"><i class="fa fa-eye"
+                                <a href="{{ route('gurus.show', $row->mapel->id) }}" class="btn btn-info"><i class="fa fa-eye"
                                         aria-hidden="true"></i></a>
                             </div>
                         </td>
@@ -58,6 +58,7 @@
                         <th>No</th>
                         <th>ID Mapel</th>
                         <th>Nama Mapel</th>
+                        <th>Total Guru</th>
                         <th>Action</th>
                     </tr>
                 </tfoot>

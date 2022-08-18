@@ -126,7 +126,7 @@
                                         </a>
                                     </li>
         <li class="nav-item">
-                                    <a href="{{route('banners.index')}}" class="nav-link">
+                                    <a href="{{route('gurus.index')}}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Data Guru</p>
                                     </a>

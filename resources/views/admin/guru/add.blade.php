@@ -7,14 +7,14 @@
             <h3 class="card-title">Data {{ $title }}</h3>
 
             <div class="card-tools">
-                <a href="{{ route('prestasis.index') }}" class="btn btn-danger">
+                <a href="{{ route('gurus.index') }}" class="btn btn-danger">
                     <i class="fa fa-arrow-left"></i>&nbsp;Kembali
                 </a>
             </div>
 
         </div>
         <div class="card-body">
-            <form action="{{ route('prestasis.store') }}" method="post" enctype="multipart/form-data">
+            <form action="{{ route('gurus.store') }}" method="post" enctype="multipart/form-data">
 
                 <!-- Default box -->
                 <div class="card">
@@ -47,17 +47,34 @@
                                             </div>
                                         @endif
                                         <div class="form-group">
-                                            <label for="judul_prestasi">Judul prestasi</label>
-                                            <input type="text" id="judul_prestasi" name="judul_prestasi"
+                                            <label for="judul_prestasi">ID Card</label>
+                                            <input type="text" id="id_card" name="id_card"
+                                                class="form-control" value="{{ "G". rand(10000, 1999) }}" readonly>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="judul_prestasi">NIP</label>
+                                            <input type="text" id="nip" name="nip"
                                                 class="form-control">
                                         </div>
                                         <div class="form-group">
-                                            <label for="judul_prestasi">Isi prestasi</label>
-                                            <textarea id="summernote" height="500" name="isi_prestasi">
-
-                                            </textarea>
+                                            <label for="judul_prestasi">Nama</label>
+                                            <input type="text" id="nama" name="nama"
+                                                class="form-control">
                                         </div>
+                                        <div class="form-group">
+                                            <select name="jenis_kelamin" id="jenis_kelamin" class="form-control">
+                                                <option value="L">L</option>
+                                                <option value="P">P</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <select name="id_mapel" id="id_mapel" class="form-control">
+                                                @foreach ($mapel as $mapelRow)
 
+                                                <option value="{{ $mapelRow->id }}">{{ $mapelRow->nama_mapel }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
                                         <div class="form-group">
                                             <label for="file">File Image</label>
                                             <input type="file" id="file" name="image" id="image"
