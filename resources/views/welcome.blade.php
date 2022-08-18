@@ -2,7 +2,7 @@
 @section('content')
     <section class="banner">
         <div class="container">
-            <div id="carouselExampleControls" style="border:goldenrod 5px solid" class="carousel slide" data-bs-ride="carousel">
+            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     @php
                         $count = 1;
@@ -27,7 +27,7 @@
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
                     data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"
+                    <span class="carousel-control-prev-icon bg-dark" aria-hidden="true"
                         style="background-color:goldenrod 5px solid"></span>
                     <span class="visually-hidden">Previous</span>
                 </button>
@@ -41,49 +41,36 @@
     </section>
 
 
-    <section class="jurusan">
+    <section class="jurusan" >
+        <center>
+            <hr style="border:3px #3FA796 solid;width: 250px;">
+        </center>
+        <h3 class="text-center">Jurusan</h3>
+        <center>
+            <hr style="border:3px #3FA796 solid;width:250px;">
+        </center>
         <div class="container mt-3">
-            <div class="card">
-                <div class="card-body">
                     <div class="row">
-                        <div class="col-md-8">
-                            <hr style="border:3px #3FA796 solid;width:50%">
-                            <h3>Rekayasa Perangkat Lunak</h3>
-                            <p>
-                                Jurusan Teknik Komputer dan Informatika membekali siswa/i dengan pengetahuan, kemampuan dan
-                                keterampila dalam dunia komputer dan informatika seperti : merakit komputer dan
-                                mengoprasikan komputer, membuat program aplikasi dan menguasai bahasa pemrograman, membuat
-                                website, membuat aplikasi mobile andr…
-                            </p>
-                        </div>
-                        <div class="col-md-4">
-                            <img src="{{ asset('img/rpl.jpeg') }}" class="img-fluid"
-                                alt="https://3.bp.blogspot.com/-Ct6q_xVbvDs/UVA4lb3Om0I/AAAAAAAAAXc/HF6viI0_CyA/s640/Rekayasa+Perangkat+Lunak.jpg"
-                                class="gambar_jurusan">
-                        </div>
-                    </div>
+             @php
+                    $count=1;
+                @endphp
+                @foreach ($jurusan as $jurusanRow )
+                <div class="col-md-6 mt-2 pt-3">
+ <div class="card">
+                <center><img class="img-thumbnail mt-2" width="120px" src="{{ asset('jurusan/'.$jurusanRow->path)  }}" alt="Card image cap"></center>
+                <div class="card-body pt-3">
+                    <h5 class="text-center">{{$jurusanRow->judul_jurusan  }}</h5>
+                   <center><a href="#" class="btn btn-primary">Selengkapnya</a></center>
                 </div>
-                <hr style="border:3px #FEC260 solid;">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <img src="{{ asset('img/tsm.jpeg') }}" class="img-fluid"
-                                alt="https://3.bp.blogspot.com/-Ct6q_xVbvDs/UVA4lb3Om0I/AAAAAAAAAXc/HF6viI0_CyA/s640/Rekayasa+Perangkat+Lunak.jpg"
-                                class="gambar_jurusan">
-                        </div>
-                        <div class="col-md-8">
-                            <hr style="border:3px #3FA796 solid;width:50%">
-                            <h3>Rekayasa Perangkat Lunak</h3>
-                            <p>
-                                Jurusan Teknik Komputer dan Informatika membekali siswa/i dengan pengetahuan, kemampuan dan
-                                keterampila dalam dunia komputer dan informatika seperti : merakit komputer dan
-                                mengoprasikan komputer, membuat program aplikasi dan menguasai bahasa pemrograman, membuat
-                                website, membuat aplikasi mobile andr…
-                            </p>
-                        </div>
-                    </div>
                 </div>
-            </div>
+                </div>
+                @php
+                    $count++;
+                @endphp
+                @endforeach
+        </div>
+
+
         </div>
     </section>
     <section class="fasilitas mt-3">
@@ -129,7 +116,7 @@
             </div>
         </div>
     </section>
-    <section class="berita">
+    <section class="prestasi" >
         <center>
             <hr style="border:3px #3FA796 solid;width: 250px;">
         </center>
@@ -140,85 +127,32 @@
         <div class="container">
 
             <div class="row">
-                <div class="col-md-3">
+                @foreach ($berita as $beritaRow)
+
+                <div class="col-md-3 mt-3">
                     <div class="card">
-                        <img class="card-img-top" src="{{ asset('lks_prov.jpeg') }}" alt="Card image cap">
+                        <img class="card-img-top" src="{{ asset('berita/'. $beritaRow->path ) }}" alt="Card image cap">
                         <div class="card-body">
-                            <h5 class="card-title">Lomba Lks Provinsi Jawa Barat</h5>
+                            <h5 class="card-title" style="text-align: center">{{ $beritaRow->judul_berita }}</h5>
                             <div style="height:73px;overflow:hidden;">
 
-                                <p class="card-text" style="text-align:center;">Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Perspiciatis reiciendis consequuntur autem architecto adipisci, sint
-                                    recusandae? Sunt, fugiat totam consequuntur minima exercitationem, quaerat voluptate et
-                                    in tempore doloribus esse saepe!</p>
+                                <p class="card-text" style="text-align:center;">{!!  $beritaRow->isi_berita !!}</p>
                             </div>
                             <center>
-                                <a href="#" class="btn btn-danger" style="background-color: #A10035;">Baca Cerita</a>
+                                <hr>
+                                 <p class="card-text" style="text-align:center;"><b>Author : {{ $beritaRow->user->name  }}</b> </p>
+                                 <p class="card-text" style="text-align:center;"><b>Tgl. : {{ $beritaRow->updated_at  }}</b> </p>
+                                <a href="#" class="btn btn-danger" style="background-color: #A10035;">Baca Berita</a>
                             </center>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <div class="card">
-                        <img class="card-img-top" src="{{ asset('lks_prov.jpeg') }}" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Lomba Lks Provinsi Jawa Barat</h5>
-                            <div style="height:73px;overflow:hidden;">
+                @endforeach
 
-                                <p class="card-text" style="text-align:center;">Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Perspiciatis reiciendis consequuntur autem architecto adipisci, sint
-                                    recusandae? Sunt, fugiat totam consequuntur minima exercitationem, quaerat voluptate et
-                                    in tempore doloribus esse saepe!</p>
-                            </div>
-                            <center>
-                                <a href="#" class="btn btn-danger" style="background-color: #A10035;"
-                                    style="background-color: #A10035;">Baca Cerita</a>
-                            </center>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card">
-                        <img class="card-img-top" src="{{ asset('lks_prov.jpeg') }}" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Lomba Lks Provinsi Jawa Barat</h5>
-                            <div style="height:73px;overflow:hidden;">
-
-                                <p class="card-text" style="text-align:center;">Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Perspiciatis reiciendis consequuntur autem architecto adipisci, sint
-                                    recusandae? Sunt, fugiat totam consequuntur minima exercitationem, quaerat voluptate et
-                                    in tempore doloribus esse saepe!</p>
-                            </div>
-                            <center>
-                                <a href="#" class="btn btn-danger" style="background-color: #A10035;">Baca
-                                    Cerita</a>
-                            </center>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card">
-                        <img class="card-img-top" src="{{ asset('lks_prov.jpeg') }}" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Lomba Lks Provinsi Jawa Barat</h5>
-                            <div style="height:73px;overflow:hidden;">
-
-                                <p class="card-text" style="text-align:center;">Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Perspiciatis reiciendis consequuntur autem architecto adipisci, sint
-                                    recusandae? Sunt, fugiat totam consequuntur minima exercitationem, quaerat voluptate et
-                                    in tempore doloribus esse saepe!</p>
-                            </div>
-                            <center>
-                                <a href="#" class="btn btn-danger" style="background-color: #A10035;">Baca
-                                    Cerita</a>
-                            </center>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
-    <section class="prestasi">
+    <section class="prestasi" style="background-color:#eeee ">
         <center>
             <hr style="border:3px #3FA796 solid;width: 250px;">
         </center>
@@ -227,96 +161,29 @@
             <hr style="border:3px #3FA796 solid;width:250px;">
         </center>
         <div class="container">
-
             <div class="row">
-                <div class="col-md-3">
+                @foreach ($prestasi as $prestasiRow)
+
+                <div class="col-md-3 mt-4">
                     <div class="card">
-                        <img class="card-img-top" src="{{ asset('lks_prov.jpeg') }}" alt="Card image cap">
+                        <img class="card-img-top" src="{{ asset('prestasi/'. $prestasiRow->path ) }}" alt="Card image cap">
                         <div class="card-body">
-                            <h5 class="card-title">Juara 1 LKS Tingkat Kab. Bandung</h5>
+                            <h5 class="card-title" style="text-align: center">{{ $prestasiRow->judul_prestasi }}</h5>
                             <div style="height:73px;overflow:hidden;">
 
-                                <p class="card-text" style="text-align:center;">Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Perspiciatis reiciendis consequuntur autem architecto adipisci, sint
-                                    recusandae? Sunt, fugiat totam consequuntur minima exercitationem, quaerat voluptate et
-                                    in tempore doloribus esse saepe!</p>
+                                <p class="card-text" style="text-align:center;">{!!   $prestasiRow->isi_prestasi !!}</p>
                             </div>
                             <center>
-                                <a href="#" class="btn btn-danger" style="background-color: #A10035;">Baca
-                                    Cerita</a>
+                                <hr>
+                                 <p class="card-text" style="text-align:center;"><b>Author : {{ $prestasiRow->user->name  }}</b> </p>
+                                 <p class="card-text" style="text-align:center;"><b>Tgl. : {{ $prestasiRow->updated_at  }}</b> </p>
+                                <a href="#" class="btn btn-danger" style="background-color: #A10035;">Lihat Prestasi</a>
                             </center>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <div class="card">
-                        <img class="card-img-top" src="{{ asset('lks_prov.jpeg') }}" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Juara 1 LKS Tingkat Kab. Bandung</h5>
-                            <div style="height:73px;overflow:hidden;">
+                @endforeach
 
-                                <p class="card-text" style="text-align:center;">Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Perspiciatis reiciendis consequuntur autem architecto adipisci, sint
-                                    recusandae? Sunt, fugiat totam consequuntur minima exercitationem, quaerat voluptate et
-                                    in tempore doloribus esse saepe!</p>
-                            </div>
-                            <center>
-                                <a href="#" class="btn btn-danger" style="background-color: #A10035;">Baca
-                                    Cerita</a>
-                            </center>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card">
-                        <img class="card-img-top" src="{{ asset('lks_prov.jpeg') }}" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Juara 1 LKS Tingkat Kab. Bandung</h5>
-                            <div style="height:73px;overflow:hidden;">
-
-                                <p class="card-text" style="text-align:center;">Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Perspiciatis reiciendis consequuntur autem architecto adipisci, sint
-                                    recusandae? Sunt, fugiat totam consequuntur minima exercitationem, quaerat voluptate et
-                                    in tempore doloribus esse saepe!</p>
-                            </div>
-                            <center>
-                                <a href="#" class="btn btn-danger" style="background-color: #A10035;">Baca
-                                    Cerita</a>
-                            </center>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card">
-                        <img class="card-img-top" src="{{ asset('lks_prov.jpeg') }}" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Juara 1 LKS Tingkat Kab. Bandung</h5>
-                            <div style="height:73px;overflow:hidden;">
-
-                                <p class="card-text" style="text-align:center;">Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Perspiciatis reiciendis consequuntur autem architecto adipisci, sint
-                                    recusandae? Sunt, fugiat totam consequuntur minima exercitationem, quaerat voluptate et
-                                    in tempore doloribus esse saepe!</p>
-                            </div>
-                            <center>
-                                <a href="#" class="btn btn-danger" style="background-color: #A10035;">Baca
-                                    Cerita</a>
-                            </center>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="footer mt-2">
-        <div class="container">
-            <div class="card">
-                <div class="card-header">
-                    Footer
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">INI FOOTER</h5>
-                </div>
             </div>
         </div>
     </section>

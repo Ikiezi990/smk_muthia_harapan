@@ -71,7 +71,7 @@ class BannerController extends Controller
      */
     public function show($id)
     {
-        $data['data'] = Banner::find($id)->first();
+        $data['data'] = Banner::where('id',$id)->first();
         $data['title'] = "Banner";
         return view('admin.banner.detailbanner', $data);
     }
@@ -84,7 +84,7 @@ class BannerController extends Controller
      */
     public function edit($id)
     {
-         $data['data'] = Banner::find($id)->first();
+         $data['data'] = Banner::where('id',$id)->first();
         $data['title'] = "Banner";
         return view('admin.banner.editbanner', $data);
     }
@@ -115,7 +115,7 @@ class BannerController extends Controller
             $details['path'] = "$bannerImage";
         }
 
-        $product   = Banner::find($id)->update($details);
+        $product   = Banner::where('id',$id)->update($details);
         notify()->success('Data Banner Berhasil Di Update');
         return redirect(route('banners.index'));
     }
@@ -128,7 +128,7 @@ class BannerController extends Controller
      */
     public function destroy($id)
     {
-       Banner::find($id)->delete();
+       Banner::where('id',$id)->delete();
        notify()->success('Data Banner Berhasil Di Hapus');
        return redirect(route('banners.index'));
     }

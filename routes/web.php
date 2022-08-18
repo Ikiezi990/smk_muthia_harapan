@@ -1,6 +1,10 @@
 <?php
 
 use App\Http\Controllers\BannerController;
+use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\PrestasiController;
+use App\Http\Controllers\JurusanController;
+use App\Http\Controllers\GuruController;
 use App\Models\Banner;
 use Illuminate\Support\Facades\Route;
 
@@ -21,3 +25,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('banners', BannerController::class);
+Route::resource('beritas', BeritaController::class);
+Route::resource('prestasis',PrestasiController::class);
+Route::resource('jurusans',JurusanController::class);
+Route::resource('gurus',GuruController::class);

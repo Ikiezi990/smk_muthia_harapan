@@ -5,10 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Banner extends Model
+class Mapel extends Model
 {
     use HasFactory;
-    protected $guarded = [];
-    // Disable the model timestamps
-    public $timestamps = false;
+            protected $guarded = [];
 }

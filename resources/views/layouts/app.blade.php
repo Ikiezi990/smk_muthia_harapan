@@ -24,7 +24,7 @@
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm text-white" style="background-color: #FEC260 !important;">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm text-white"  >
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
@@ -36,11 +36,81 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                PROFIL
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">
+                                    Visi Misi
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    Fasilitas
+                                </a>
+
+                            </div>
+
+                        </li>
+                                                <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                JURUSAN
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">
+                                    Visi Misi
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    Fasilitas
+                                </a>
+
+                            </div>
+
+                        </li>
+                                         <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                BERITA
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">
+                                    Berita Terbaru
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    Prestasi
+                                </a>
+
+                            </div>
+
+                        </li>
+                                         <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                BURSA KERJA KHUSUS
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">
+                                    Visi Misi
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    Fasilitas
+                                </a>
+
+                            </div>
+
+                        </li>
 
                     </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
+                                                  <li class="nav-item">
+                            <a class="nav-link" style="text-shadow: solid 1px white;" href="">KONTAK</a>
+                        </li>
+                                                  <li class="nav-item">
+                            <a class="nav-link" style="text-shadow: solid 1px white;" href="">PPDB</a>
+                        </li>
                         <!-- Authentication Links -->
                         @guest
                         @if (Route::has('login'))
@@ -81,7 +151,7 @@
             @yield('content')
         </main>
         <!-- Footer -->
-        <footer class="text-center text-lg-start bg-light text-muted" style="background-color: #FEC260 !important;">
+        <footer class="text-center text-lg-start bg-dark text-muted">
             <!-- Section: Social media -->
             <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
                 <!-- Left -->
