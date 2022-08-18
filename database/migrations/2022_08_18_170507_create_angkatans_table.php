@@ -1,14 +1,10 @@
-
-
-
-
 <?php
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBeritasTable extends Migration
+class CreateAngkatansTable extends Migration
 {
     /**
      * Run the migrations.
@@ -17,14 +13,10 @@ class CreateBeritasTable extends Migration
      */
     public function up()
     {
-        Schema::create('beritas', function (Blueprint $table) {
+        Schema::create('angkatans', function (Blueprint $table) {
             $table->id();
-            $table->integer('id_user');
-            $table->string("judul_berita");
-            $table->text("isi_berita");
-            $table->string('path');
+            $table->string("nama_angkatan");
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 
@@ -35,6 +27,6 @@ class CreateBeritasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('beritas');
+        Schema::dropIfExists('angkatans');
     }
 }

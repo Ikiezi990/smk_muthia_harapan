@@ -20,6 +20,7 @@ class CreatePrestasisTable extends Migration
             $table->text("isi_prestasi");
             $table->string('path');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

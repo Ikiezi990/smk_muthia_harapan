@@ -120,7 +120,7 @@
                             <ul class="nav nav-treeview">
 
                                     <li class="nav-item">
-                                        <a href="{{ route('prestasis.index') }}" class="nav-link">
+                                        <a href="{{ route('kelass.index') }}" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>Data Kelas</p>
                                         </a>
@@ -138,7 +138,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ route('jurusans.index') }}" class="nav-link">
+                                    <a href="{{ route('mapels.index') }}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Data Mapel</p>
                                     </a>
@@ -243,8 +243,6 @@
     <script src="{{asset('templates/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
     <!-- AdminLTE App -->
     <script src="{{asset('templates/dist/js/adminlte.min.js')}}"></script>
-    <!-- AdminLTE for demo purposes -->
-    <script src="{{asset('templates/dist/js/demo.js')}}"></script>
     <script src="{{asset('templates/plugins/datatables/jquery.dataTables.min.js')}}"></script>
     <script src="{{asset('templates/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
     <script src="{{asset('templates/plugins/datatables-responsive/js/dataTables.responsive.min.js')}}"></script>

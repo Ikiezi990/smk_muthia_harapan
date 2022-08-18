@@ -22,6 +22,7 @@ class CreateGurusTable extends Migration
             $table->integer('nip')->nullable();
             $table->string('path');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

@@ -20,6 +20,7 @@ class CreateJurusansTable extends Migration
             $table->text("isi_jurusan");
             $table->string('path');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

@@ -17,6 +17,7 @@ class Banner extends Migration
             $table->id();
             $table->string('judul_banner');
             $table->string('path');
+                        $table->softDeletes();
         });
     }
 

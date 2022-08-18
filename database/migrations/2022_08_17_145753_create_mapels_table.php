@@ -15,9 +15,10 @@ class CreateMapelsTable extends Migration
     {
         Schema::create('mapels', function (Blueprint $table) {
             $table->id();
-            $table->integer('id_jurusan');
+            $table->string('kategori_mapel');
             $table->string('nama_mapel');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

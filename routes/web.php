@@ -3,9 +3,10 @@
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\PrestasiController;
+use App\Http\Controllers\MapelController;
 use App\Http\Controllers\JurusanController;
 use App\Http\Controllers\GuruController;
-use App\Models\Banner;
+use App\Http\Controllers\KelasController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,3 +30,5 @@ Route::resource('beritas', BeritaController::class);
 Route::resource('prestasis',PrestasiController::class);
 Route::resource('jurusans',JurusanController::class);
 Route::resource('gurus',GuruController::class);
+Route::resource('mapels',MapelController::class);
+Route::resource('kelass',KelasController::class);
