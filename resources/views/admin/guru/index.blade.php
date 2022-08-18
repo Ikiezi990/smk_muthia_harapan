@@ -40,7 +40,7 @@
                     <?php foreach ($data as $row) : ?>
                     <tr>
                         <td>{{ $i++ }}</td>
-                        <td>{{ $row->mapel->wwwwwwwwwwwwwwwid }}</td>
+                        <td>{{ $row->mapel->id }}</td>
                         <td>{{ $row->mapel->nama_mapel }}</td>
                         <td>{{ $row->total_guru }}</td>
                         <td>
