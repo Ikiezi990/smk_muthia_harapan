@@ -36,16 +36,21 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" style="text-shadow: solid 1px white;" href="{{url('/')}}">
+                                <center><i class="fa fa-home"></i> Beranda</center>
+                            </a>
+                        </li>
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 <i class="fa fa-address-card"></i> PROFIL
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item" href="{{route('welcome.visi')}}">
                                     <i class="fa fa-book-open"></i> Visi Misi
                                 </a>
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item" href="{{route('welcome.fasilitas')}}">
                                     <i class="fa fa-toolbox"></i> Fasilitas
                                 </a>
 
@@ -53,31 +58,15 @@
 
                         </li>
                         <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                <i class="fa fa-school"></i> JURUSAN
-                            </a>
-
-                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">
-                                    <i class="fa fa-desktop"></i> RPL
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fa fa-tools"></i> TBSM
-                                </a>
-
-                            </div>
-
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 <i class="fa fa-newspaper"></i> BERITA
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item" href="{{route('welcome.berita')}}">
                                     <i class="fa fa-sticky-note"></i> Berita Terbaru
                                 </a>
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item" href="{{route('welcome.prestasi')}}">
                                     <i class="fa fa-trophy"></i> Prestasi
                                 </a>
 
@@ -151,6 +140,7 @@
         </nav>
 
         <main class="py-4">
+
             @yield('content')
         </main>
         <!-- Footer -->

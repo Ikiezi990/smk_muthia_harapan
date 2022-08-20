@@ -22,6 +22,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [App\Http\Controllers\WelcomeController::class, 'index']);
+Route::get('berita/welcome', [App\Http\Controllers\WelcomeController::class, 'berita'])->name('welcome.berita');
+Route::get('prestasi/welcome', [App\Http\Controllers\WelcomeController::class, 'prestasi'])->name('welcome.prestasi');
+Route::get('visi/welcome', [App\Http\Controllers\WelcomeController::class, 'visi'])->name('welcome.visi');
+Route::get('fasilitas/welcome', [App\Http\Controllers\WelcomeController::class, 'fasilitas'])->name('welcome.fasilitas');
 
 Auth::routes();
 
