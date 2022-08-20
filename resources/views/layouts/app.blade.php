@@ -24,7 +24,7 @@
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm text-white"  >
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm text-white">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
@@ -38,64 +38,62 @@
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                PROFIL
+                                <i class="fa fa-address-card"></i> PROFIL
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="#">
-                                    Visi Misi
+                                    <i class="fa fa-book-open"></i> Visi Misi
                                 </a>
                                 <a class="dropdown-item" href="#">
-                                    Fasilitas
+                                    <i class="fa fa-toolbox"></i> Fasilitas
                                 </a>
 
                             </div>
 
                         </li>
-                                                <li class="nav-item dropdown">
+                        <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                JURUSAN
+                                <i class="fa fa-school"></i> JURUSAN
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="#">
-                                    Visi Misi
+                                    <i class="fa fa-desktop"></i> RPL
                                 </a>
                                 <a class="dropdown-item" href="#">
-                                    Fasilitas
+                                    <i class="fa fa-tools"></i> TBSM
                                 </a>
 
                             </div>
 
                         </li>
-                                         <li class="nav-item dropdown">
+                        <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                BERITA
+                                <i class="fa fa-newspaper"></i> BERITA
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="#">
-                                    Berita Terbaru
+                                    <i class="fa fa-sticky-note"></i> Berita Terbaru
                                 </a>
                                 <a class="dropdown-item" href="#">
-                                    Prestasi
+                                    <i class="fa fa-trophy"></i> Prestasi
                                 </a>
 
                             </div>
 
                         </li>
-                                         <li class="nav-item dropdown">
+                        <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                BURSA KERJA KHUSUS
+                                <i class="fa fa-building"></i> BURSA KERJA KHUSUS
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="#">
-                                    Visi Misi
+                                    <i class="fa fa-user-plus"></i> Login Alumni
                                 </a>
-                                <a class="dropdown-item" href="#">
-                                    Fasilitas
-                                </a>
+
 
                             </div>
 
@@ -105,11 +103,15 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
-                                                  <li class="nav-item">
-                            <a class="nav-link" style="text-shadow: solid 1px white;" href="">KONTAK</a>
+                        <li class="nav-item">
+                            <a class="nav-link" style="text-shadow: solid 1px white;" href="">
+                                <center><i class="fa fa-user"></i> KONTAK</center>
+                            </a>
                         </li>
-                                                  <li class="nav-item">
-                            <a class="nav-link" style="text-shadow: solid 1px white;" href="">PPDB</a>
+                        <li class="nav-item">
+                            <a class="nav-link" style="text-shadow: solid 1px white;" href="">
+                                <center><i class="fa fa-book-open"></i> PPDB</center>
+                            </a>
                         </li>
                         <!-- Authentication Links -->
                         @guest
@@ -133,6 +135,7 @@
                             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
+                                    <i class="fa fa-sign-out"></i>
                                     {{ __('Logout') }}
                                 </a>
 

@@ -7,14 +7,14 @@
         <h3 class="card-title">Data {{ $title }}</h3>
 
         <div class="card-tools">
-            <a href="{{ route('mapels.index') }}" class="btn btn-danger">
+            <a href="{{ route('siswass.index') }}" class="btn btn-danger">
                 <i class="fa fa-arrow-left"></i>&nbsp;Kembali
             </a>
         </div>
 
     </div>
     <div class="card-body">
-        <form action="{{ route('mapels.update', $data->id) }}" method="post" enctype="multipart/form-data">
+        <form action="{{ route('siswass.update', $data->id) }}" method="post" enctype="multipart/form-data">
 
             <!-- Default box -->
             <div class="card">
@@ -22,7 +22,7 @@
                 <div class="card-body">
                     <div class="row">
 
-                        <div class="col-md-12">
+                        <div class="col-md-6">
                             <div class="card card-primary">
                                 <div class="card-header">
                                     @csrf
@@ -46,19 +46,32 @@
                                     </div>
                                     @endif
                                     <div class="form-group">
-                                        <label for="nama_mapel">Nama Mapel</label>
-                                        <input type="text" id="nama_mapel" value="{{ $data->nama_mapel }}" name="nama_mapel" class="form-control">
+                                        <label for="nama_siswa">Nama Siswa</label>
+                                        <input type="text" id="nama_siswa" name="nama_siswa" value="{{$data->nama}}" class="form-control">
                                     </div>
                                     <div class="form-group">
-                                        <label for="judul_berita">Kategori</label>
-                                        <select name="kategori_mapel" id="" class="form-control">
-                                            <option value="Umum" @if ($data->kategori_mapel == "Umum")
-                                                selected
-                                                @endif>Umum</option>
-                                            <option value="Kejuruan" @if ($data->kategori_mapel == "Kejuruan")
-                                                selected
-                                                @endif>Kejuruan</option>
+                                        <label for="nis">Nis</label>
+                                        <input type="text" id="nis" value="{{$data->nis}}" name="nis" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="nisn">Nisn</label>
+                                        <input type="text" id="nisn" value="{{$data->nisn}}" name="nisn" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="no_telp">No Telpon</label>
+                                        <input type="text" id="no_telp" name="no_telp" value="{{$data->no_telp}}" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="kelas"></label>
+                                        <select name="id_kelas" id="" class="form-control">
+                                            @foreach($kelas as $kelasRow)
+                                            <option value="{{$kelasRow->id}}" @if($kelasRow->id == $data->id_kelas) selected @endif>{{$kelasRow->nama_kelas}}</option>
+                                            @endforeach
                                         </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="file">File Image</label>
+                                        <input type="file" id="file" name="image" id="image" class="form-control" onchange="previewFile(this);">
                                     </div>
                                 </div>
                                 <!-- /.card-body -->
@@ -71,7 +84,7 @@
                         <div class="col-12">
                             <a href="#" class="btn btn-secondary">Cancel</a>
                             <button type="submit" value="" class="btn btn-success float-right">Tambah
-                                Mapel</button>
+                                Siswa</button>
                         </div>
                     </div>
                 </div>

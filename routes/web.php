@@ -7,6 +7,7 @@ use App\Http\Controllers\MapelController;
 use App\Http\Controllers\JurusanController;
 use App\Http\Controllers\GuruController;
 use App\Http\Controllers\KelasController;
+use App\Http\Controllers\SiswaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,15 +21,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/',[App\Http\Controllers\WelcomeController::class, 'index']);
+Route::get('/', [App\Http\Controllers\WelcomeController::class, 'index']);
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('banners', BannerController::class);
 Route::resource('beritas', BeritaController::class);
-Route::resource('prestasis',PrestasiController::class);
-Route::resource('jurusans',JurusanController::class);
-Route::resource('gurus',GuruController::class);
-Route::resource('mapels',MapelController::class);
-Route::resource('kelass',KelasController::class);
+Route::resource('prestasis', PrestasiController::class);
+Route::resource('jurusans', JurusanController::class);
+Route::resource('gurus', GuruController::class);
+Route::resource('mapels', MapelController::class);
+Route::resource('kelass', KelasController::class);
+Route::resource('siswass', SiswaController::class);

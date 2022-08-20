@@ -39,7 +39,7 @@ class MapelController extends Controller
      */
     public function store(Request $request)
     {
-      request()->validate([
+        request()->validate([
             'nama_mapel' => 'required',
             'kategori_mapel' => 'required',
         ]);
@@ -74,7 +74,7 @@ class MapelController extends Controller
      */
     public function edit($id)
     {
-        $data['data'] = Mapel::where('id',$id)->first();
+        $data['data'] = Mapel::where('id', $id)->first();
         $data['title'] = "Mapel";
         return view('admin.mapel.edit', $data);
     }
@@ -112,14 +112,13 @@ class MapelController extends Controller
      */
     public function destroy($id)
     {
-        if (Guru::where('id_mapel', $id)->count()>0) {
+        if (Guru::where('id_mapel', $id)->count() > 0) {
             notify()->error('Data mapel Tidak Bisa Di Hapus');
             return redirect(route('mapels.index'));
-        }else{
-            Mapel::where('id',$id)->delete();
+        } else {
+            Mapel::where('id', $id)->delete();
             notify()->success('Data mapel Berhasil Di Hapus');
             return redirect(route('mapels.index'));
         }
-
     }
 }

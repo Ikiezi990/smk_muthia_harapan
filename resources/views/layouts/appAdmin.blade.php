@@ -16,26 +16,26 @@
     <link rel="stylesheet" href="{{asset('templates/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')}}">
     <link rel="stylesheet" href="{{asset('templates/plugins/datatables-responsive/css/responsive.bootstrap4.min.css')}}">
     <link rel="stylesheet" href="{{asset('templates/plugins/datatables-buttons/css/buttons.bootstrap4.min.css')}}">
-      <!-- summernote -->
-  <link rel="stylesheet" href="{{ asset('templates/plugins/summernote/summernote-bs4.min.css')}}">
-  <!-- CodeMirror -->
-  <link rel="stylesheet" href="{{ asset('templates/plugins/codemirror/codemirror.css')}}">
-  <link rel="stylesheet" href="{{ asset('templates/plugins/codemirror/theme/monokai.css')}}">
-  <!-- SimpleMDE -->
-  <link rel="stylesheet" href="{{ asset('templates/plugins/simplemde/simplemde.min.css')}}"/>
+    <!-- summernote -->
+    <link rel="stylesheet" href="{{ asset('templates/plugins/summernote/summernote-bs4.min.css')}}">
+    <!-- CodeMirror -->
+    <link rel="stylesheet" href="{{ asset('templates/plugins/codemirror/codemirror.css')}}">
+    <link rel="stylesheet" href="{{ asset('templates/plugins/codemirror/theme/monokai.css')}}">
+    <!-- SimpleMDE -->
+    <link rel="stylesheet" href="{{ asset('templates/plugins/simplemde/simplemde.min.css')}}" />
 </head>
 
-<body class="hold-transition sidebar-mini" >
+<body class="hold-transition sidebar-mini">
     <!-- Site wrapper -->
 
-    <div class="wrapper" >
+    <div class="wrapper">
 
-  <!-- Preloader -->
-  <div class="preloader flex-column justify-content-center align-items-center">
-    <img class="animation__shake" src="{{ asset('img/logo.png') }}" alt="AdminLTELogo" height="60" width="60">
-  </div>
+        <!-- Preloader -->
+        <div class="preloader flex-column justify-content-center align-items-center">
+            <img class="animation__shake" src="{{ asset('img/logo.png') }}" alt="AdminLTELogo" height="60" width="60">
+        </div>
         <!-- Navbar -->
-        <nav class="main-header navbar navbar-expand navbar-white navbar-light" style="z-index: -100000" >
+        <nav class="main-header navbar navbar-expand navbar-white navbar-light" style="z-index: -100000">
             <!-- Left navbar links -->
             <ul class="navbar-nav">
                 <li class="nav-item">
@@ -55,7 +55,7 @@
         <!-- /.navbar -->
 
         <!-- Main Sidebar Container -->
-        <aside class="main-sidebar sidebar-light-primary elevation-4 text-dark" style="background-color:#FEC260 ;">
+        <aside class="main-sidebar sidebar-light-primary elevation-4 text-dark">
             <!-- Brand Logo -->
             <a href="{{asset('img/logo.png')}}" class="brand-link">
                 <img src="{{asset('img/logo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
@@ -101,9 +101,9 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="../../index.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Dashboard v1</p>
+                                    <a href="{{url('/home')}}" class="nav-link">
+                                        <i class="fa fa-home"></i>
+                                        <p>Dashboard</p>
                                     </a>
                                 </li>
                             </ul>
@@ -119,33 +119,33 @@
                             </a>
                             <ul class="nav nav-treeview">
 
-                                    <li class="nav-item">
-                                        <a href="{{ route('kelass.index') }}" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Data Kelas</p>
-                                        </a>
-                                    </li>
-        <li class="nav-item">
+                                <li class="nav-item">
+                                    <a href="{{ route('kelass.index') }}" class="nav-link">
+                                        <i class="fa fa-chart-bar"></i>
+                                        <p>Data Kelas</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
                                     <a href="{{route('gurus.index')}}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
+                                        <i class="fa fa-user"></i>
                                         <p>Data Guru</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ route('beritas.index') }}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
+                                    <a href="{{ route('siswass.index') }}" class="nav-link">
+                                        <i class="fa fa-users"></i>
                                         <p>Data Siswa</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="{{ route('mapels.index') }}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
+                                        <i class="fa fa-book"></i>
                                         <p>Data Mapel</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="{{ route('jurusans.index') }}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
+                                        <i class="fa fa-money-check"></i>
                                         <p>Data SPP</p>
                                     </a>
                                 </li>
@@ -163,25 +163,25 @@
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
                                     <a href="{{route('banners.index')}}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
+                                        <i class="fa fa-images"></i>
                                         <p>Banner</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="{{ route('beritas.index') }}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
+                                        <i class="fa fa-newspaper"></i>
                                         <p>Berita</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="{{ route('prestasis.index') }}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
+                                        <i class="fa fa-trophy"></i>
                                         <p>Prestasi</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="{{ route('jurusans.index') }}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
+                                        <i class="fa fa-school"></i>
                                         <p>Jurusan</p>
                                     </a>
                                 </li>
@@ -196,7 +196,7 @@
         </aside>
 
         <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper" >
+        <div class="content-wrapper">
             <!-- Content Header (Page header) -->
             <section class="content-header">
                 <div class="container-fluid" style="z-index: -100000">
@@ -255,10 +255,10 @@
     <script src="{{asset('templates/plugins/datatables-buttons/js/buttons.html5.min.js')}}"></script>
     <script src="{{asset('templates/plugins/datatables-buttons/js/buttons.print.min.js')}}"></script>
     <script src="{{asset('templates/plugins/datatables-buttons/js/buttons.colVis.min.js')}}"></script>
-   <!-- Summernote -->
-<script src="{{ asset('templates/plugins/summernote/summernote-bs4.min.js') }}"></script>
+    <!-- Summernote -->
+    <script src="{{ asset('templates/plugins/summernote/summernote-bs4.min.js') }}"></script>
 
-   <script>
+    <script>
         $(function() {
             $("#example1").DataTable({
                 "responsive": true,
@@ -275,14 +275,13 @@
                 "responsive": true,
             });
         });
-
     </script>
     <script>
-  $(function () {
-    // Summernote
-    $('#summernote').summernote()
-  })
-</script>
+        $(function() {
+            // Summernote
+            $('#summernote').summernote()
+        })
+    </script>
 </body>
 
 </html>
