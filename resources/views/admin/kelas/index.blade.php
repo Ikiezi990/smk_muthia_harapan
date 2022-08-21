@@ -3,7 +3,7 @@
 @section('content')
     <!-- Default box -->
     <div class="card">
-        <div class="card-header">
+        <div class="card-header bg-secondary">
             <h3 class="card-title">Data {{ $title }}</h3>
 
             <div class="card-tools">

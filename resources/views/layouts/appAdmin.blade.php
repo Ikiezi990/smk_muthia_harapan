@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ $title }}</title>
+    <title>{!! $title !!}</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -96,13 +96,13 @@
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Dashboard
-                                    <i class="right fas fa-angle-left"></i>
+                                    <i class="nav-icon right fas fa-angle-left"></i>
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
                                     <a href="{{url('/home')}}" class="nav-link">
-                                        <i class="fa fa-home"></i>
+                                        <i class="nav-icon fa fa-home"></i>
                                         <p>Dashboard</p>
                                     </a>
                                 </li>
@@ -111,77 +111,95 @@
 
                         <li class="nav-item">
                             <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-edit"></i>
+                                <i class="nav-icon fas fa-database"></i>
                                 <p>
                                     Master Data
-                                    <i class="fas fa-angle-left right"></i>
+                                    <i class="nav-icon fas fa-angle-left right"></i>
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
 
                                 <li class="nav-item">
                                     <a href="{{ route('kelass.index') }}" class="nav-link">
-                                        <i class="fa fa-chart-bar"></i>
+                                        <i class="nav-icon fa fa-chart-bar"></i>
                                         <p>Data Kelas</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="{{route('gurus.index')}}" class="nav-link">
-                                        <i class="fa fa-user"></i>
+                                        <i class="nav-icon fa fa-user"></i>
                                         <p>Data Guru</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="{{ route('siswass.index') }}" class="nav-link">
-                                        <i class="fa fa-users"></i>
+                                        <i class="nav-icon fa fa-users"></i>
                                         <p>Data Siswa</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="{{ route('mapels.index') }}" class="nav-link">
-                                        <i class="fa fa-book"></i>
+                                        <i class="nav-icon fa fa-book"></i>
                                         <p>Data Mapel</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ route('jurusans.index') }}" class="nav-link">
-                                        <i class="fa fa-money-check"></i>
+                                    <a href="{{ route('spps.index') }}" class="nav-link">
+                                        <i class="nav-icon fa fa-money-check"></i>
                                         <p>Data SPP</p>
                                     </a>
                                 </li>
                             </ul>
                         </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-edit"></i>
+                                <p>
+                                    Transaksi Spp
+                                    <i class="nav-icon fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
 
+                                <li class="nav-item">
+                                    <a href="{{ route('transakisspp.index') }}" class="nav-link">
+                                        <i class="nav-icon fa fa-chart-bar"></i>
+                                        <p>Lihat Spp</p>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-edit"></i>
                                 <p>
                                     Page Management
-                                    <i class="fas fa-angle-left right"></i>
+                                    <i class="nav-icon fas fa-angle-left right"></i>
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
                                     <a href="{{route('banners.index')}}" class="nav-link">
-                                        <i class="fa fa-images"></i>
+                                        <i class="nav-icon fa fa-images"></i>
                                         <p>Banner</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="{{ route('beritas.index') }}" class="nav-link">
-                                        <i class="fa fa-newspaper"></i>
+                                        <i class="nav-icon fa fa-newspaper"></i>
                                         <p>Berita</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="{{ route('prestasis.index') }}" class="nav-link">
-                                        <i class="fa fa-trophy"></i>
+                                        <i class="nav-icon fa fa-trophy"></i>
                                         <p>Prestasi</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="{{ route('jurusans.index') }}" class="nav-link">
-                                        <i class="fa fa-school"></i>
+                                        <i class="nav-icon fa fa-school"></i>
                                         <p>Jurusan</p>
                                     </a>
                                 </li>
@@ -202,7 +220,7 @@
                 <div class="container-fluid" style="z-index: -100000">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1>{{$title}}</h1>
+                            <h1>{!! $title !!}</h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
@@ -225,7 +243,7 @@
             <div class="float-right d-none d-sm-block">
                 <b>Version</b> 3.2.0
             </div>
-            <strong>Copyright &copy; 2021-2023 <a href="#">Team IT SMK MUTHIA HARAPAN CICALENGKA</a>.</strong> All rights reserved.
+            <strong>Copyright &copy; 2022-2023 <a href="#">Team IT SMK MUTHIA HARAPAN CICALENGKA</a>.</strong> All rights reserved.
         </footer>
 
         <!-- Control Sidebar -->

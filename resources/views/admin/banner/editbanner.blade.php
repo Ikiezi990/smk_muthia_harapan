@@ -84,7 +84,7 @@
                         </div>
                         <div class="row">
                             <div class="col-12">
-                                <a href="#" class="btn btn-secondary">Cancel</a>
+
                                 <button type="submit" value="" class="btn btn-success float-right">Update
                                     Banner</button>
                             </div>

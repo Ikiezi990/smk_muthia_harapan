@@ -12,23 +12,33 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-
+    <link rel="stylesheet" href="{{asset('templates/dist/css/adminlte.min.css')}}">
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Styles -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+     <link rel="stylesheet" href="{{asset('templates/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')}}">
+    <link rel="stylesheet" href="{{asset('templates/plugins/datatables-responsive/css/responsive.bootstrap4.min.css')}}">
+    <link rel="stylesheet" href="{{asset('templates/plugins/datatables-buttons/css/buttons.bootstrap4.min.css')}}">
+    <!-- summernote -->
+    <link rel="stylesheet" href="{{ asset('templates/plugins/summernote/summernote-bs4.min.css')}}">
+    <!-- CodeMirror -->
+    <link rel="stylesheet" href="{{ asset('templates/plugins/codemirror/codemirror.css')}}">
+    <link rel="stylesheet" href="{{ asset('templates/plugins/codemirror/theme/monokai.css')}}">
+    <!-- SimpleMDE -->
+      <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="{{ asset('templates/plugins/simplemde/simplemde.min.css')}}" />
 </head>
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm text-white">
+        <nav class="navbar navbar-expand-md navbar-orange navbar-dark">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
+   <a class="navbar-brand" href="#">
+      <img src="{{ asset('img/logo.png') }}" alt="..." height="36">&nbsp;SMK MUTHIA HARAPAN
+    </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -36,22 +46,21 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" style="text-shadow: solid 1px white;" href="{{url('/')}}">
-                                <center><i class="fa fa-home"></i> Beranda</center>
-                            </a>
+                                                <li class="nav-item d-none d-sm-inline-block">
+                          <a href="{{ url('/') }}" class="nav-link">Beranda</a>
                         </li>
+
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                <i class="fa fa-address-card"></i> PROFIL
+                               PROFIL
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{route('welcome.visi')}}">
-                                    <i class="fa fa-book-open"></i> Visi Misi
+  Visi Misi
                                 </a>
                                 <a class="dropdown-item" href="{{route('welcome.fasilitas')}}">
-                                    <i class="fa fa-toolbox"></i> Fasilitas
+                                 Fasilitas
                                 </a>
 
                             </div>
@@ -59,15 +68,15 @@
                         </li>
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                <i class="fa fa-newspaper"></i> BERITA
+                                 BERITA
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{route('welcome.berita')}}">
-                                    <i class="fa fa-sticky-note"></i> Berita Terbaru
+                                    Berita Terbaru
                                 </a>
                                 <a class="dropdown-item" href="{{route('welcome.prestasi')}}">
-                                    <i class="fa fa-trophy"></i> Prestasi
+                                    Prestasi
                                 </a>
 
                             </div>
@@ -75,12 +84,12 @@
                         </li>
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                <i class="fa fa-building"></i> BURSA KERJA KHUSUS
+                                BURSA KERJA KHUSUS
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="#">
-                                    <i class="fa fa-user-plus"></i> Login Alumni
+                                  Login Alumni
                                 </a>
 
 
@@ -94,12 +103,12 @@
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
                             <a class="nav-link" style="text-shadow: solid 1px white;" href="">
-                                <center><i class="fa fa-user"></i> KONTAK</center>
+     KONTAK
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" style="text-shadow: solid 1px white;" href="">
-                                <center><i class="fa fa-book-open"></i> PPDB</center>
+                              PPDB
                             </a>
                         </li>
                         <!-- Authentication Links -->
@@ -229,7 +238,12 @@
         </footer>
         <!-- Footer -->
     </div>
-
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </body>
 
 </html>

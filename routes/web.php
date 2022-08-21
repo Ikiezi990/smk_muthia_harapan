@@ -8,6 +8,8 @@ use App\Http\Controllers\JurusanController;
 use App\Http\Controllers\GuruController;
 use App\Http\Controllers\KelasController;
 use App\Http\Controllers\SiswaController;
+use App\Http\Controllers\SppController;
+use App\Http\Controllers\TransaksiSppController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,6 +28,7 @@ Route::get('berita/welcome', [App\Http\Controllers\WelcomeController::class, 'be
 Route::get('prestasi/welcome', [App\Http\Controllers\WelcomeController::class, 'prestasi'])->name('welcome.prestasi');
 Route::get('visi/welcome', [App\Http\Controllers\WelcomeController::class, 'visi'])->name('welcome.visi');
 Route::get('fasilitas/welcome', [App\Http\Controllers\WelcomeController::class, 'fasilitas'])->name('welcome.fasilitas');
+Route::get('transakisspp/invoices/{id}', [App\Http\Controllers\TransaksiSppController::class, 'invoice'])->name('transakisspp.invoices');
 
 Auth::routes();
 
@@ -38,3 +41,5 @@ Route::resource('gurus', GuruController::class);
 Route::resource('mapels', MapelController::class);
 Route::resource('kelass', KelasController::class);
 Route::resource('siswass', SiswaController::class);
+Route::resource('spps', SppController::class);
+Route::resource('transakisspp', TransaksiSppController::class);

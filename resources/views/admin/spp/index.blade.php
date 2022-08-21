@@ -3,11 +3,11 @@
 @section('content')
 <!-- Default box -->
 <div class="card">
-    <div class="card-header bg-secondary">
+    <div class="card-header">
         <h3 class="card-title">Data {{ $title }}</h3>
 
         <div class="card-tools">
-            <a href="{{ route('kelass.create') }}" class="btn btn-primary">
+            <a href="{{ route('spps.create') }}" class="btn btn-primary">
                 <i class="fas fa-save"></i>&nbsp;Save
             </a>
             <button type="button" class="btn btn-success">
@@ -27,11 +27,10 @@
             <thead>
                 <tr>
                     <th>No</th>
-                    <th>Nis</th>
-                    <th>Nisn</th>
-                    <th>Nama</th>
-                    <th>no_telp</th>
-                    <th>Foto</th>
+                    <th>ID Kelas</th>
+                    <th>Nama Kelas</th>
+                    <th>Jurusan</th>
+                    <th>Angkatan</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -40,20 +39,22 @@
                 <?php foreach ($data as $row) : ?>
                     <tr>
                         <td>{{ $i++ }}</td>
-                        <td>{{ $row->nis }}</td>
-                        <td>{{$row->nisn}}</td>
-                        <td>{{ $row->nama }}</td>
-                        <td>{{ $row->no_telp }}</td>
-                        <td><img src="{{ asset('siswa/'.$row->path) }}" width="120px" alt="" class="img-thumbnail"></td>
+                        <td>{{ $row->id }}</td>
+                        @if (( date('Y') - $row->angkatan->nama_angkatan) == 0)
+                        <td>{{"X-".$row->nama_kelas }}-{{ $row->angkatan->nama_angkatan }}</td>
+                        @elseif (($hasil = date('Y') - $row->angkatan->nama_angkatan) == 1)
+                        <td>{{"XI-".$row->nama_kelas }}-{{ $row->angkatan->nama_angkatan }}</td>
+                        @elseif ((date('Y') - $row->angkatan->nama_angkatan) == 2)
+                        <td>{{"XII-".$row->nama_kelas }}-{{ $row->angkatan->nama_angkatan }}</td>
+                        @else
+                        <td>{{"Alumni-".$row->nama_kelas }}-{{ $row->angkatan->nama_angkatan }}</td>
+
+                        @endif
+                        <td>{{ $row->jurusan->judul_jurusan }}</td>
+                        <td>{{ $row->angkatan->nama_angkatan }}</td>
                         <td>
                             <div class="btn-group">
-
-                                <form action="{{ route('siswass.destroy', $row->id) }}" method="post">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-danger"> <i class="fas fa-trash"></i></button>
-                                </form>
-                                <a href="{{ route('siswass.edit', $row->id) }}" class="btn btn-success"><i class="fa fa-edit" aria-hidden="true"></i></a>
+                                <a href="{{ route('spps.show', $row->id) }}" class="btn btn-info"><i class="fa fa-eye" aria-hidden="true"></i></a>
                             </div>
                         </td>
                     </tr>
@@ -63,11 +64,10 @@
             <tfoot>
                 <tr>
                     <th>No</th>
-                    <th>Nis</th>
-                    <th>Nisn</th>
-                    <th>Nama</th>
-                    <th>no_telp</th>
-                    <th>Foto</th>
+                    <th>ID Kelas</th>
+                    <th>Nama Kelas</th>
+                    <th>Jurusan</th>
+                    <th>Angkatan</th>
                     <th>Action</th>
                 </tr>
             </tfoot>

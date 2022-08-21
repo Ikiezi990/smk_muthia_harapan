@@ -7,14 +7,14 @@
         <h3 class="card-title">Data {{ $title }}</h3>
 
         <div class="card-tools">
-            <a href="{{ route('mapels.index') }}" class="btn btn-danger">
+            <a href="{{ route('spps.index') }}" class="btn btn-danger">
                 <i class="fa fa-arrow-left"></i>&nbsp;Kembali
             </a>
         </div>
 
     </div>
     <div class="card-body">
-        <form action="{{ route('mapels.store') }}" method="post" enctype="multipart/form-data">
+        <form action="{{ route('spps.store') }}" method="post" enctype="multipart/form-data">
 
             <!-- Default box -->
             <div class="card">
@@ -22,7 +22,7 @@
                 <div class="card-body">
                     <div class="row">
 
-                        <div class="col-md-12">
+                        <div class="col-md-6">
                             <div class="card card-primary">
                                 <div class="card-header">
                                     @csrf
@@ -46,15 +46,20 @@
                                     </div>
                                     @endif
                                     <div class="form-group">
-                                        <label for="nama_mapel">Nama Mapel</label>
-                                        <input type="text" id="nama_mapel" name="nama_mapel" class="form-control">
+                                        <label for="nama_spp">Nama spp</label>
+                                        <input type="text" id="nama_spp" name="nama_spp" class="form-control">
                                     </div>
                                     <div class="form-group">
-                                        <label for="judul_berita">Kategori</label>
-                                        <select name="kategori_mapel" id="" class="form-control">
-                                            <option value="Umum">Umum</option>
-                                            <option value="Kejuruan">Kejuruan</option>
+                                        <label for="kelas">Kelas</label>
+                                        <select name="id_kelas" id="" class="form-control">
+                                            @foreach($kelas as $kelasRow)
+                                            <option value="{{$kelasRow->id}}">{{$kelasRow->nama_kelas}}</option>
+                                            @endforeach
                                         </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="tot_bayar">Total Tagihan</label>
+                                        <input type="text" id="tot_bayar" name="tot_bayar" class="form-control">
                                     </div>
                                 </div>
                                 <!-- /.card-body -->
@@ -67,7 +72,7 @@
                         <div class="col-12">
 
                             <button type="submit" value="" class="btn btn-success float-right">Tambah
-                                Mapel</button>
+                                SPP</button>
                         </div>
                     </div>
                 </div>

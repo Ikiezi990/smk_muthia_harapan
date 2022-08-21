@@ -25,11 +25,11 @@
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon bg-dark" aria-hidden="true" style="background-color:goldenrod 5px solid"></span>
-                <span class="visually-hidden">Previous</span>
+                <span class="visually-hidden"></span>
             </button>
             <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
+                <span class="visually-hidden"></span>
             </button>
         </div>
     </div>
@@ -40,7 +40,7 @@
     <center>
         <hr style="border:3px #3FA796 solid;width: 250px;">
     </center>
-    <h3 class="text-center">Jurusan</h3>
+    <h3 class="text-center"><ion-icon name="clipboard-outline"></ion-icon>&nbsp;Jurusan</h3>
     <center>
         <hr style="border:3px #3FA796 solid;width:250px;">
     </center>
@@ -51,7 +51,8 @@
             @endphp
             @foreach ($jurusan as $jurusanRow )
             <div class="col-md-6 mt-2 pt-3">
-                <div class="card">
+                <div class="card" data-aos="zoom-in-down"
+>
                     <center><img class="img-thumbnail mt-2" width="120px" src="{{ asset('jurusan/'.$jurusanRow->path)  }}" alt="Card image cap"></center>
                     <div class="card-body pt-3">
                         <h5 class="text-center">{{$jurusanRow->judul_jurusan }}</h5>
@@ -71,41 +72,76 @@
     <div class="container">
         <div class="card">
             <div class="card-body">
-                <h3 class="text-center">Fasilitas</h3>
-                <div class="row">
-                    <div class="col-md-3 col-6 mb-2">
-                        <div class="card" style="background-color:#3FA796">
-                            <div class="card-body">
-                                <center><i class="fa fa-wifi fa-5x "></i></center>
-                                <h3 class="text-center">Wifi</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-6 mb-2">
-                        <div class="card" style="background-color:#3FA796">
-                            <div class="card-body">
-                                <center><i class="fa fa-camera fa-5x "></i></center>
-                                <h3 class="text-center">CCTV</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-6 mb-2">
-                        <div class="card" style="background-color:#3FA796">
-                            <div class="card-body">
-                                <center><i class="fa fa-desktop fa-5x "></i></center>
-                                <h3 class="text-center">Lab. Komp</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-6 mb-2">
-                        <div class="card" style="background-color:#3FA796">
-                            <div class="card-body">
-                                <center><i class="fa fa-cog fa-5x "></i></center>
-                                <h3 class="text-center">BENGKEL</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <h3 class="text-center"><ion-icon name="stats-chart-outline"></ion-icon>&nbsp;Statistik</h3>
+  <div class="container-fluid">
+        <!-- Small boxes (Stat box) -->
+        <div class="row">
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div data-aos="fade-right"
+     data-aos-offset="300"
+     data-aos-easing="ease-in-sine"class="small-box bg-info">
+              <div class="inner">
+                <h3>{{ $siswa->count() }}</h3>
+
+                <p>Siswa</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-person"></i>
+              </div>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div data-aos="fade-right"
+     data-aos-offset="300"
+     data-aos-easing="ease-in-sine"class="small-box bg-success">
+              <div class="inner">
+                <h3>{{ $guru->count() }}</h3>
+
+                <p>Guru</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-person"></i>
+              </div>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div data-aos="fade-right"
+     data-aos-offset="300"
+     data-aos-easing="ease-in-sine"class="small-box bg-warning">
+              <div class="inner">
+                <h3>{{ $kelas->count() }}</h3>
+
+                <p>Kelas</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-home"></i>
+              </div>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div data-aos="fade-right"
+     data-aos-offset="300"
+     data-aos-easing="ease-in-sine"class="small-box bg-danger">
+              <div class="inner">
+                <h3>{{ $jurusan->count() }}</h3>
+
+                <p>Prestasi</p>
+              </div>
+              <div class="icon">
+               <i class="ion ion-trophy"></i>
+              </div>
+            </div>
+          </div>
+          <!-- ./col -->
+        </div>
+  </div>
             </div>
         </div>
     </div>
@@ -114,7 +150,7 @@
     <center>
         <hr style="border:3px #3FA796 solid;width: 250px;">
     </center>
-    <h3 class="text-center">Berita Terbaru</h3>
+    <h3 class="text-center"><ion-icon name="newspaper-outline"></ion-icon>&nbsp;Berita Terbaru</h3>
     <center>
         <hr style="border:3px #3FA796 solid;width:250px;">
     </center>
@@ -124,7 +160,8 @@
             @foreach ($berita as $beritaRow)
 
             <div class="col-md-3 mt-3">
-                <div class="card">
+                <div class="card" data-aos="fade-up"
+     data-aos-anchor-placement="top-center">
                     <img class="card-img-top" src="{{ asset('berita/'. $beritaRow->path ) }}" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title" style="text-align: center">{{ $beritaRow->judul_berita }}</h5>
@@ -136,7 +173,7 @@
                             <hr>
                             <p class="card-text" style="text-align:center;"><b>Author : {{ $beritaRow->user->name  }}</b> </p>
                             <p class="card-text" style="text-align:center;"><b>Tgl. : {{ $beritaRow->updated_at  }}</b> </p>
-                            <a href="#" class="btn btn-danger" style="background-color: #A10035;">Baca Berita</a>
+                            <a href="#" class="btn btn-danger" style="background-color: #A10035;"><ion-icon name="book-outline"></ion-icon>&nbsp;Baca Berita</a>
                         </center>
                     </div>
                 </div>
@@ -150,7 +187,7 @@
     <center>
         <hr style="border:3px #3FA796 solid;width: 250px;">
     </center>
-    <h3 class="text-center">Prestasi Kami</h3>
+    <h3 class="text-center"><ion-icon name="trophy-outline"></ion-icon>&nbsp;Prestasi Kami</h3>
     <center>
         <hr style="border:3px #3FA796 solid;width:250px;">
     </center>
@@ -159,7 +196,9 @@
             @foreach ($prestasi as $prestasiRow)
 
             <div class="col-md-3 mt-4">
-                <div class="card">
+                <div class="card" data-aos="fade-right"
+     data-aos-offset="300"
+     data-aos-easing="ease-in-sine">
                     <img class="card-img-top" src="{{ asset('prestasi/'. $prestasiRow->path ) }}" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title" style="text-align: center">{{ $prestasiRow->judul_prestasi }}</h5>

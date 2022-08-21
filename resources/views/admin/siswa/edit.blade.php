@@ -3,7 +3,7 @@
 @section('content')
 <!-- Default box -->
 <div class="card">
-    <div class="card-header">
+    <div class="card-header bg-secondary">
         <h3 class="card-title">Data {{ $title }}</h3>
 
         <div class="card-tools">
@@ -24,7 +24,7 @@
 
                         <div class="col-md-6">
                             <div class="card card-primary">
-                                <div class="card-header">
+                                <div class="card-header bg-secondary">
                                     @csrf
                                     @method('PUT')
                                     <h3 class="card-title">Form {{ $title }}</h3>
@@ -82,7 +82,7 @@
                     </div>
                     <div class="row">
                         <div class="col-12">
-                            <a href="#" class="btn btn-secondary">Cancel</a>
+
                             <button type="submit" value="" class="btn btn-success float-right">Tambah
                                 Siswa</button>
                         </div>
